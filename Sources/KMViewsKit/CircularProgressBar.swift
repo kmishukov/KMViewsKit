@@ -11,16 +11,16 @@ public class CircularProgressBar: UIView {
 
     // MARK: - Properties
 
-    private let backgroundLayer = CAShapeLayer()
-    private let progressLayer = CAShapeLayer()
-    private let activeColor: UIColor
-    private let secondaryColor: UIColor
-    
-    var progress: CGFloat = 0.0001 {
+    public var progress: CGFloat = 0.0001 {
         didSet {
             setNeedsDisplay()
         }
     }
+
+    private let backgroundLayer = CAShapeLayer()
+    private let progressLayer = CAShapeLayer()
+    private let activeColor: UIColor
+    private let secondaryColor: UIColor
 
     // MARK: - Init
 
