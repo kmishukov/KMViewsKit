@@ -11,14 +11,6 @@ public class CircularProgressBar: UIView {
 
     // MARK: - Properties
 
-    static private let defaultActive = UIColor(
-        red: 63.0 / 255.0,
-        green: 170.0 / 255.0,
-        blue: 250.0 / 255.0,
-        alpha: 1
-    )
-    static private let defaultBackground = UIColor.lightGray
-
     private let backgroundLayer = CAShapeLayer()
     private let progressLayer = CAShapeLayer()
     private let activeColor: UIColor
@@ -32,15 +24,22 @@ public class CircularProgressBar: UIView {
 
     // MARK: - Init
 
-    init(
-        activeColor: UIColor = defaultActive,
-        backgroundColor: UIColor = defaultBackground
+    public init(
+        activeColor: UIColor,
+        backgroundColor: UIColor
     ) {
         self.activeColor = activeColor
         self.secondaryColor = backgroundColor
         super.init(frame: .zero)
         layer.addSublayer(backgroundLayer)
         layer.addSublayer(progressLayer)
+    }
+
+    public convenience init() {
+        self.init(
+            activeColor: Constants.defaultActive,
+            backgroundColor: Constants.defaultBackground
+        )
     }
 
     required init?(coder: NSCoder) {
@@ -77,5 +76,13 @@ public class CircularProgressBar: UIView {
 extension CircularProgressBar {
     enum Constants {
         static let lineWidthRatio: CGFloat = 8
+        static let defaultActive = UIColor(
+            red: 63.0 / 255.0,
+            green: 170.0 / 255.0,
+            blue: 250.0 / 255.0,
+            alpha: 1
+        )
+        static let defaultBackground = UIColor.lightGray
+
     }
 }
