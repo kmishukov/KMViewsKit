@@ -11,14 +11,13 @@ import UIKit
 public class HorizontalProgressBar: UIView {
     
     // MARK: - Properties
-
+    public var activeColor: UIColor
     public var progress: CGFloat = 0.01 {
         didSet {
             setNeedsDisplay()
         }
     }
     private let progressLayer = CALayer()
-    private let activeColor: UIColor
 
     // MARK: - Init
 
@@ -30,6 +29,13 @@ public class HorizontalProgressBar: UIView {
         super.init(frame: .zero)
         self.backgroundColor = backgroundColor
         layer.addSublayer(progressLayer)
+    }
+
+    convenience init() {
+        self.init(
+            activeColor: CircularProgressBar.Constants.defaultActive,
+            backgroundColor: CircularProgressBar.Constants.defaultBackground
+        )
     }
 
     required init?(coder: NSCoder) {
