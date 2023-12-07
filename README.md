@@ -1,0 +1,6 @@
+# KMViewsKit
+<...>
+## CircularProgressBar
+<...>
+## HorizontalProgressBar
+<...>

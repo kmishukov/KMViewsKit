@@ -11,6 +11,7 @@ import UIKit
 public class HorizontalProgressBar: UIView {
     
     // MARK: - Properties
+    
     public var activeColor: UIColor
     public var progress: CGFloat = 0.01 {
         didSet {
