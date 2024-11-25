@@ -73,6 +73,8 @@ public class CircularProgressBar: UIView {
     }
 }
 
+// MARK: - Constants
+
 extension CircularProgressBar {
     enum Constants {
         static let lineWidthRatio: CGFloat = 8
@@ -83,6 +85,5 @@ extension CircularProgressBar {
             alpha: 1
         )
         static let defaultBackground = UIColor.lightGray
-
     }
 }
