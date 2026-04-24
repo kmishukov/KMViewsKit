@@ -32,7 +32,7 @@ public class HorizontalProgressBar: UIView {
         layer.addSublayer(progressLayer)
     }
 
-    convenience init() {
+    public convenience init() {
         self.init(
             activeColor: CircularProgressBar.Constants.defaultActive,
             backgroundColor: CircularProgressBar.Constants.defaultBackground
